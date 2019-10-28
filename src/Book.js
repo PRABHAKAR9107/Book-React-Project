@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 
-import Button from "./buttons";
-
 export default class Book extends Component {
   constructor(props) {
     super(props);
@@ -33,8 +31,10 @@ export default class Book extends Component {
 
   render() {
     // console.log(this.props);
-    const { img, title, author } = this.props.info;
+    const { id, img, title, author } = this.props.info;
+
     const { handleDelete } = this.props;
+    console.log(id);
 
     return (
       <article className="book">
@@ -43,7 +43,9 @@ export default class Book extends Component {
           <h3>Title: {title}</h3>
           <h5>Author: {author}</h5>
           <h3>Bag :{this.state.count}</h3>
-          <Button handleDelete={handleDelete} />
+          <button type="button" onClick={handleDelete}>
+            Delete
+          </button>
 
           <button type="button" onClick={this.cartCount}>
             Add to Cart

@@ -9,8 +9,12 @@ export default class booklist extends Component {
     };
   }
 
-  handleDelete = () => {
-    console.log(` It is from parent component`);
+  handleDelete = id => {
+    console.log(this.state.books);
+
+    const sortedBooks = this.state.books.filter(item => item.id !== id);
+
+    console.log(sortedBooks);
   };
 
   render() {
