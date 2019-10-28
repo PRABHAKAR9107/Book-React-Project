@@ -34,6 +34,8 @@ export default class Book extends Component {
   render() {
     // console.log(this.props);
     const { img, title, author } = this.props.info;
+    const { handleDelete } = this.props;
+
     return (
       <article className="book">
         <img src={img} width="150" alt="book" />
@@ -41,7 +43,8 @@ export default class Book extends Component {
           <h3>Title: {title}</h3>
           <h5>Author: {author}</h5>
           <h3>Bag :{this.state.count}</h3>
-          <Button></Button>
+          <Button handleDelete={handleDelete} />
+
           <button type="button" onClick={this.cartCount}>
             Add to Cart
           </button>
